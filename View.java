@@ -1,32 +1,37 @@
 import javax.swing.*;
 import java.awt.*;
 
-public class View extends JFrame{
+
+
+
+
+
+public class View extends JFrame
+{
+	private JPanel jp = new JPanel();
+	private JLabel jl = new JLabel();
+
 	
-	private ImageIcon image1;
-	private JLabel label1;
-	private JPanel panel_1 = new JPanel();
-	private JButton button_1 = new JButton();
-	
-	public static void main (String[] args){
-		View gui =	new View();
-		
-		gui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		gui.setVisible(true);
-		gui.pack();
-		
-	}
-	
-	public View() {
-		super("Thermonitor");
-		setSize(800,600);
-		setResizable(true);
+	public View() 
+	{
+		setTitle("Thermonitor");
 		setVisible(true);
-//		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setSize(800,600);
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+				
+		jl.setIcon(new ImageIcon("D:\\Projects\\AE_Projekt\\knob.png"));
+		jp.add(jl);
 		
-		image1 = new ImageIcon(getClass().getResource("knob.png"));
-		label1.setIcon(image1);
+		add(jp);
 		
-		add(label1);
+		validate();
 	}
+	
+	
+	
+	public static void main (String[] args)
+	{
+		View v = new View();
+	}
+	
 }
