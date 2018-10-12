@@ -11,7 +11,7 @@ public class View extends JFrame {
         setSize(800, 600);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
-        jl.setIcon(new ImageIcon("D:\\Projects\\AE_Projekt\\knob.png"));
+        jl.setIcon(new ImageIcon("C:\\Users\\verab\\Documents\\Schule\\AE\\Thermostat\\knob.png"));
         jp.add(jl);
 
         add(jp);
