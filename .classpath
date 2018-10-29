@@ -2,32 +2,7 @@
 <classpath>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="lib" path="C:/Users/verab/.m2/repository/org/apache/commons/commons-csv/1.5/commons-csv-1.5.jar" sourcepath="C:/Users/verab/.m2/repository/org/apache/commons/commons-csv/1.5/commons-csv-1.5-sources.jar">
-		<attributes>
-			<attribute name="maven.pomderived" value="true"/>
-			<attribute name="maven.groupId" value="org.apache.commons"/>
-			<attribute name="maven.artifactId" value="commons-csv"/>
-			<attribute name="maven.version" value="1.5"/>
-			<attribute name="maven.scope" value="compile"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/verab/.m2/repository/de/heuboe/base/jhbBase/2.11.0/jhbBase-2.11.0.jar" sourcepath="C:/Users/verab/.m2/repository/de/heuboe/base/jhbBase/2.11.0/jhbBase-2.11.0-sources.jar">
-		<attributes>
-			<attribute name="maven.pomderived" value="true"/>
-			<attribute name="maven.groupId" value="de.heuboe.base"/>
-			<attribute name="maven.artifactId" value="jhbBase"/>
-			<attribute name="maven.version" value="2.11.0"/>
-			<attribute name="maven.scope" value="compile"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/verab/.m2/repository/org/geotools/gt-api/8.7/gt-api-8.7.jar">
-		<attributes>
-			<attribute name="maven.pomderived" value="true"/>
-			<attribute name="maven.groupId" value="org.geotools"/>
-			<attribute name="maven.artifactId" value="gt-api"/>
-			<attribute name="maven.version" value="8.7"/>
-			<attribute name="maven.scope" value="compile"/>
-		</attributes>
-	</classpathentry>
+	<classpathentry kind="lib" path="D:/Downloads/1.5/commons-csv-1.5.jar"/>
+	<classpathentry kind="lib" path="D:/Downloads/1.5/commons-csv-1.5-sources.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

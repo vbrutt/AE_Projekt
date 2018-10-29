@@ -4,6 +4,7 @@ public class View extends JFrame {
     private static final long serialVersionUID = 1L;
     private JPanel jp = new JPanel();
     private JLabel jl = new JLabel();
+    private JSlider jsld = new JSlider();
 
     public View() {
         setTitle("Thermonitor");
@@ -13,7 +14,8 @@ public class View extends JFrame {
 
         jl.setIcon(new ImageIcon("C:\\Users\\verab\\Documents\\Schule\\AE\\Thermostat\\knob.png"));
         jp.add(jl);
-
+        jp.add(jsld);
+        
         add(jp);
 
         validate();
