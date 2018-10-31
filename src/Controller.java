@@ -5,28 +5,34 @@ import java.util.Map;
 
 public class Controller {
 
-    private Map<String, Heizung> heizungen = new HashMap<>();
+	private Map<String, Heizung> heizungen = new HashMap<>();
 
-    public Map<String, Heizung> getHeizungen() {
-        return heizungen;
-    }
+	public Controller(String source) throws NumberFormatException, IOException {
+		onStart(source);
+	}
 
-    public void setHeizungen(Map<String, Heizung> heizungen) {
-        this.heizungen = heizungen;
-    }
+	public Map<String, Heizung> getHeizungen() {
+		return heizungen;
+	}
 
-    // Wird von der View aufgerufen
-    private void setTemp(String id, double temp) {
-        heizungen.get(id).setTemp(temp);
-    }
+	public void setHeizungen(Map<String, Heizung> heizungen) {
+		this.heizungen = heizungen;
+	}
 
-    public void onStart() throws NumberFormatException, IOException {
-        setHeizungen(Model.importData());
+	// Wird von der View aufgerufen
+	private void setTemp(String id, double temp) {
+		heizungen.get(id).setTemp(temp);
+	}
 
-    }
+	public void onStart(String source) throws NumberFormatException, IOException {
+		setHeizungen(Model.importData(source));
+	}
 
-    public void onEnd() throws IOException {
-        Model.export(getHeizungen());
-    }
+	public void onEnd(String source) throws IOException {
+		Model.export(getHeizungen(), source);
+	}
 
+	public static void main(String[] args) {
+		View view = new View();
+	}
 }
