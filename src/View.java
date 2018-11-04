@@ -14,14 +14,16 @@ public class View extends JFrame
 	private JSlider _jSldr = new JSlider();
 	static int anzahlheizungen;
 	static Controller _ctrlr;
+    static String sourcePath = "D:\\Downloads\\Data2.csv";
+	
 
 	public View() {
 		setTitle("Thermonitor");
 		setVisible(true);
-		setSize(800, 600);
+		setSize(800, 320);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 
-		_jLbl.setIcon(new ImageIcon("C:\\Users\\verab\\Documents\\Schule\\AE\\Thermostat\\knob.png"));
+		//_jLbl.setIcon(new ImageIcon("C:\\Users\\verab\\Documents\\Schule\\AE\\Thermostat\\knob.png"));
 		_jSldr.addChangeListener(this);
 		_jPnl.add(_jLbl);
 		_jPnl.add(_jSldr);
@@ -31,17 +33,28 @@ public class View extends JFrame
 		validate();
 	}
 	    public void stateChanged(ChangeEvent e) {
-        JSlider source = (JSlider)e.getSource();
-        if (!source.getValueIsAdjusting()) {
-            double temp = (int)source.getValue();
-            //hab noch keine HeizungsID, daher der platzhalter "heizungID"
-            _ctrlr.setTemp("heizungID",temp);
+        JSlider sourceSlider = (JSlider)e.getSource();
+        if (!sourceSlider.getValueIsAdjusting()) {
+            double temp = (int)sourceSlider.getValue();
+            //hab noch keine HeizungsID, daher der platzhalter "Bedroom"
+            _ctrlr.setTemp("Bedroom",temp);
+            
+            try {
+				Export();
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
         }    
     }
+		    
+	    private void Export() throws IOException {
+	    	_ctrlr.onEnd(sourcePath);
+	    }
 	    
 	public static void main(String[] args) throws NumberFormatException, IOException {	
-		String source = "";
-		_ctrlr = new Controller(source);
+		//String sourcePath = "D:\\Downloads\\Data2.csv";
+		_ctrlr = new Controller(sourcePath);
 		anzahlheizungen = _ctrlr.getHeizungen().size();
 		new View();
 	}

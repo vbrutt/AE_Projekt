@@ -20,7 +20,7 @@ public class Controller {
 	}
 
 	// Wird von der View aufgerufen
-	private void setTemp(String id, double temp) {
+	public void setTemp(String id, double temp) {
 		heizungen.get(id).setTemp(temp);
 	}
 

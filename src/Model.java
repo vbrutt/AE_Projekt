@@ -13,8 +13,8 @@ public class Model {
 		FileReader reader = new FileReader(source);
 		CSVParser parser = new CSVParser(reader, format);
 		for (CSVRecord record : parser.getRecords()) {
-			String id = record.get("Id");
-			double temp = Double.parseDouble(record.get("temp"));
+			String id = record.get("id");
+			double temp = Double.parseDouble(record.get("temperature"));
 			Heizung heizung = new Heizung(id, temp);
 			heizungen.put(id, heizung);
 		}
@@ -26,7 +26,7 @@ public class Model {
 
 	public static void export(Map<String, Heizung> heizungen, String source) throws IOException {
 		heizungen.get("Livingroom").setTemp(123);
-		CSVFormat format = CSVFormat.EXCEL.withHeader("Id", "temp").withDelimiter(';');
+		CSVFormat format = CSVFormat.EXCEL.withHeader("id", "temperature").withDelimiter(';');
 		BufferedWriter writer = Files
 				.newBufferedWriter(Paths.get(source));
 		CSVPrinter printer = new CSVPrinter(writer, format);
