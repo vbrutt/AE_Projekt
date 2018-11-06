@@ -27,8 +27,7 @@ public class Model {
 	public static void export(Map<String, Heizung> heizungen, String source) throws IOException {
 		heizungen.get("Livingroom").setTemp(123);
 		CSVFormat format = CSVFormat.EXCEL.withHeader("Id", "temp").withDelimiter(';');
-		BufferedWriter writer = Files
-				.newBufferedWriter(Paths.get(source));
+		BufferedWriter writer = Files.newBufferedWriter(Paths.get(source));
 		CSVPrinter printer = new CSVPrinter(writer, format);
 
 		for (Map.Entry<String, Heizung> entry : heizungen.entrySet()) {
