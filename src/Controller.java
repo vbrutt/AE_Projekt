@@ -1,4 +1,3 @@
-
 import java.io.*;
 import java.util.HashMap;
 import java.util.Map;
@@ -6,9 +5,16 @@ import java.util.Map;
 public class Controller {
 
 	private Map<String, Heizung> heizungen = new HashMap<>();
+	private View view;
 
 	public Controller(String source) throws NumberFormatException, IOException {
 		onStart(source);
+		this.view = new View(this, source);
+	}
+
+	public void showView() {
+		view.setVisible(true);
+		view.setSize(650, 320);
 	}
 
 	public Map<String, Heizung> getHeizungen() {
@@ -20,11 +26,7 @@ public class Controller {
 	}
 
 	// Wird von der View aufgerufen
-<<<<<<< HEAD
-	void setTemp(String id, double temp) {
-=======
 	public void setTemp(String id, double temp) {
->>>>>>> 6ea1ecb83787ee48a65888331c3b52138dae4c42
 		heizungen.get(id).setTemp(temp);
 	}
 
@@ -34,9 +36,5 @@ public class Controller {
 
 	public void onEnd(String source) throws IOException {
 		Model.export(getHeizungen(), source);
-	}
-
-	public static void main(String[] args) {
-		View view = new View();
 	}
 }

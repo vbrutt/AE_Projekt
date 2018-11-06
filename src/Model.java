@@ -21,28 +21,18 @@ public class Model {
 		reader.close();
 		parser.close();
 		return heizungen;
-
 	}
 
 	public static void export(Map<String, Heizung> heizungen, String source) throws IOException {
-		heizungen.get("Livingroom").setTemp(123);
-<<<<<<< HEAD
-		CSVFormat format = CSVFormat.EXCEL.withHeader("Id", "temp").withDelimiter(';');
-		BufferedWriter writer = Files.newBufferedWriter(Paths.get(source));
-=======
 		CSVFormat format = CSVFormat.EXCEL.withHeader("id", "temperature").withDelimiter(';');
-		BufferedWriter writer = Files
-				.newBufferedWriter(Paths.get(source));
->>>>>>> 6ea1ecb83787ee48a65888331c3b52138dae4c42
+		BufferedWriter writer = Files.newBufferedWriter(Paths.get(source));
 		CSVPrinter printer = new CSVPrinter(writer, format);
 
 		for (Map.Entry<String, Heizung> entry : heizungen.entrySet()) {
 			printer.printRecord(entry.getKey(), entry.getValue().getTemp());
-
 		}
 
 		printer.close();
 		writer.close();
-		// csv soll mit neuen Daten �berschrieben werden!!!
 	}
 }
