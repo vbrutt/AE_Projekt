@@ -20,7 +20,11 @@ public class Controller {
 	}
 
 	// Wird von der View aufgerufen
+<<<<<<< HEAD
 	void setTemp(String id, double temp) {
+=======
+	public void setTemp(String id, double temp) {
+>>>>>>> 6ea1ecb83787ee48a65888331c3b52138dae4c42
 		heizungen.get(id).setTemp(temp);
 	}
 
