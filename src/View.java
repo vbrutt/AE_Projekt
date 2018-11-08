@@ -21,8 +21,9 @@ public class View extends JFrame implements ChangeListener, ActionListener {
 
 	private String sourcePath;
 
-	/** Der View-Konstruktor untersucht die vom Controller übergebene Map und legt für jeden Eintrag eine Heizung an.
-	 * 
+	/** Der View-Konstruktor untersucht die vom Controller übergebene Map und legt für jeden Eintrag einen Slider an.
+	 * Um jedem Slider eine Heizung zuzuordnen wird eine "Slidermap" erstellt, die jedem Slider einen String 
+	 * zuordnet
 	 * @param ctrlr Die Controller-Klasse
  	 * @param sourcePath Der Pfad zur CSV-Datei, die als Stand-In für unser Netzwerk-Backend dient.
 	 */
