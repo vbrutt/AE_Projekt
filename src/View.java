@@ -21,6 +21,11 @@ public class View extends JFrame implements ChangeListener, ActionListener {
 
 	private String sourcePath;
 
+	/** Der View-Konstruktor untersucht die vom Controller übergebene Map und legt für jeden Eintrag eine Heizung an.
+	 * 
+	 * @param ctrlr Die Controller-Klasse
+ 	 * @param sourcePath Der Pfad zur CSV-Datei, die als Stand-In für unser Netzwerk-Backend dient.
+	 */
 	public View(Controller ctrlr, String sourcePath) {
 		super("Thermonitor");
 		this.ctrlr = ctrlr;
